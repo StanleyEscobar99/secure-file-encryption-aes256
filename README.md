@@ -1,7 +1,8 @@
-# secure-file-encryption-aes256
+# Secure File Encryption and Transfer (AES-256)
 
 ## Overview
-This project documents a hands-on Windows cybersecurity lab focused on protecting sensitive financial data using encryption, secure key handling, and secure file transfer.
+Hands-on cybersecurity lab demonstrating secure file encryption, key management,
+secure file transfer, and controlled access to encryption keys using Windows systems.
 
 ## Tools Used
 - Windows PowerShell
@@ -9,37 +10,39 @@ This project documents a hands-on Windows cybersecurity lab focused on protectin
 - SCP / SSH
 - Thunderbird
 
-## Lab Goals Completed (6 Steps)
+## Lab Steps Completed
 
 ### Step 1 — Generate AES-256 Key (ZYWIN01)
-- Created the EncryptionKeys folder and generated `finance.key` using OpenSSL.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.1`
+- Generated `finance.key` using OpenSSL.
+- Screenshot: LAB.Securing.sensitive.financial.data.1.png
 
 ### Step 2 — Transfer Key Using SCP (ZYWIN01 → ZYWIN02)
-- Securely transferred `finance.key` to ZYWIN02 using SCP.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.2`
-- - **Screenshot:** `LAB.Securing.sensitive.financial.data.2.1`
+- Securely transferred the encryption key using SCP.
+- Screenshots:
+  - LAB.Securing.sensitive.financial.data.2.png
+  - LAB.Securing.sensitive.financial.data.2.1.png
 
-### Step 3 — Grant Read-Only Access (ZYWIN02)
-- Used file permissions (icacls) to grant read-only access to Rina for `finance.key`.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.3`
+### Step 3 — Apply Least-Privilege Permissions (ZYWIN02)
+- Granted read-only access to Rina for `finance.key`.
+- Screenshot: LAB.Securing.sensitive.financial.data.3.png
 
 ### Step 4 — Encrypt Financial Report (ZYWIN01)
-- Encrypted `financialReport.xlsx` using AES-256-CBC and saved output as `financialReport.xlsx.enc`.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.4`
+- Encrypted `financialReport.xlsx` using AES-256-CBC.
+- Screenshot: LAB.Securing.sensitive.financial.data.4.png
 
-### Step 5 — Email Encrypted File (ZYWIN01 → ZYWIN02)
-- Emailed `financialReport.xlsx.enc` to Rina for saving in `C:\Users\Rina\Documents` on ZYWIN02.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.5`
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.5.1`
+### Step 5 — Email Encrypted File
+- Sent `financialReport.xlsx.enc` to Rina via email.
+- Screenshots:
+  - LAB.Securing.sensitive.financial.data.5.png
+  - LAB.Securing.sensitive.financial.data.5.1.png
 
-### Step 6 — Decrypt Encrypted File (ZYWIN02)
-- Decrypted `financialReport.xlsx.enc` using `finance.key`, restoring `financialReport.xlsx`.
-- **Screenshot:** `LAB.Securing.sensitive.financial.data.6`
+### Step 6 — Decrypt File (ZYWIN02)
+- Decrypted the encrypted file using `finance.key`.
+- Screenshot: LAB.Securing.sensitive.financial.data.6.png
 
 ## Skills Demonstrated
-- Symmetric encryption (AES-256-CBC)
-- Key management and secure storage
-- Secure file transfer (SCP/SSH)
-- Access control / least privilege
-- Secure communication workflow and verification
+- AES-256 symmetric encryption
+- Secure key management
+- SCP / SSH secure file transfer
+- Access control and least privilege
+- Secure data transmission and verification
